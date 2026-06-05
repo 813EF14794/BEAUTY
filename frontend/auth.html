@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication - Aura Elegance</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><h2>Aura Elegance</h2></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="booking.html">Book Appointment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="authLink"><a href="auth.html" class="active">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div id="alertBox" class="alert"></div>
+        
+        <div class="auth-wrapper">
+            <div class="form-container" style="margin: 0;">
+                <h3 style="margin-bottom:20px; color:var(--dark-pink)">Welcome Back (Login)</h3>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="lEmail">Email address</label>
+                        <input type="email" id="lEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lPassword">Password</label>
+                        <input type="password" id="lPassword" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Login</button>
+                </form>
+            </div>
+
+            <div class="form-container" style="margin: 0;">
+                <h3 style="margin-bottom:20px; color:var(--dark-pink)">Create Account (Register)</h3>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="rName">Full Name</label>
+                        <input type="text" id="rName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rEmail">Email Address</label>
+                        <input type="email" id="rEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rPassword">Password</label>
+                        <input type="password" id="rPassword" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Aura Elegance Parlour. All Rights Reserved.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

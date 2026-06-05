@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Aura Elegance</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><h2>santhiya Elegance</h2></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="booking.html" class="active">Book Appointment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="authLink"><a href="auth.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2 class="section-title">Reserve Your Luxury Session</h2>
+
+        <div id="alertBox" class="alert"></div>
+
+        <div class="form-container">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="bName">Full Name</label>
+                    <input type="text" id="bName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="bEmail">Email Address</label>
+                    <input type="email" id="bEmail" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="bService">Select Treatment</label>
+                    <select id="bService" class="form-control" required>
+                        <option value="">-- Choose a Service --</option>
+                        <option value="Glamour Makeup">Glamour Makeup</option>
+                        <option value="Luxury Spa Treatment">Luxury Spa Treatment</option>
+                        <option value="Trendy Haircut & Style">Trendy Haircut & Style</option>
+                        <option value="Deep Cleansing Facial">Deep Cleansing Facial</option>
+                        <option value="Royal Bridal Package">Royal Bridal Package</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bDate">Appointment Date</label>
+                    <input type="date" id="bDate" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="bTime">Preferred Time</label>
+                    <input type="time" id="bTime" class="form-control" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Confirm Secure Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Aura Elegance Parlour. All Rights Reserved.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

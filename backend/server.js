@@ -98,6 +98,9 @@ app.post('/api/bookings', auth, async (req, res) => {
         });
     }
 
+    // try block-ku munnadiye let vachu define panna thaan catch block-la use panna mudiyum boss!
+    let savedBooking = null;
+
     try {
         const newBooking = new Booking({
             userId: req.user.id,
@@ -108,12 +111,11 @@ app.post('/api/bookings', auth, async (req, res) => {
             time
         });
         
-        await newBooking.save();
+        savedBooking = await newBooking.save();
 
         // 🟢 WHATSAPP NOTIFICATION SETUP:
-        // 👇 Inga mattum unga Twilio 'AC...' nu arambikira code-ah paste pannunga boss
-        const accountSid = 'ACc90ef293f675c581956b22f1479ecb4e'; 
-        const authToken = '19776c9e1975775cf2c1322c6adfbc26';   
+        const accountSid ='ACc90ef293f675c581956b22f1479ecb4e'; 
+        const authToken ='fd14aca8bcae901a5e58ed3418f45655';   
         const client = twilio(accountSid, authToken);
 
         await client.messages.create({
@@ -123,11 +125,24 @@ app.post('/api/bookings', auth, async (req, res) => {
         });
 
         console.log('✅ WhatsApp alert sent to phone successfully!');
-        res.status(201).json({ message: 'Appointment booked successfully!', booking: newBooking });
+        return res.status(201).json({ message: 'Appointment booked successfully!', booking: savedBooking });
 
     } catch (err) {
         console.error("🔥 ACTUAL BOOKING OR WHATSAPP ERROR:", err); 
-        res.status(201).json({ message: 'Booking done, but alert failed', booking: newBooking, error: err.message });
+        
+        // 🛡️ CRASH SAFETY SYSTEM: Twilio auth error aanaalum database-la data save aagirundha customer-ku safe-ah success respond pogum.
+        if (savedBooking) {
+            return res.status(201).json({ 
+                message: 'Booking done, but alert failed', 
+                booking: savedBooking, 
+                error: err.message 
+            });
+        } else {
+            return res.status(500).json({ 
+                message: 'Database save failure error', 
+                error: err.message 
+            });
+        }
     }
 });
 

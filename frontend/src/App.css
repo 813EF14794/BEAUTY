@@ -1,4 +1,11 @@
 /* 🎨 Santhiya Elegance - Master React Frontend Styling Matrix */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+
 
 :root {
   --main-pink: #ff69b4;

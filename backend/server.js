@@ -158,5 +158,6 @@ app.post('/api/contact', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 5000;
+// 🟢 Locked ports prachana illama irukka fresh Port 5005 setup!
+const PORT = process.env.PORT || 5005;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

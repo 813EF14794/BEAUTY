@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 // 🔌 Unga Live Backend Server URL.
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'http://localhost:5005/api';
 
 function App() {
   // 🧭 Page view navigation indicators
